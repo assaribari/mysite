@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<c:import url="/views/include/navigation.jsp"></c:import>
+			<c:import url="/views/include/navigation_gb.jsp"></c:import>
 		</div>
 		<div id="footer">
 			<c:import url="/views/include/footer.jsp"></c:import>

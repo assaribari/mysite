@@ -5,8 +5,7 @@ public class MemberVo {
 	private String name;
 	private String email;
 	private String password;
-	private String gender;
-	public Long getNo() {
+	private String gender;public Long getNo() {
 		return no;
 	}
 	public void setNo(Long no) {

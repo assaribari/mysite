@@ -1,2 +1,172 @@
 @CHARSET "UTF-8";
 @import "mysite.css";
+
+#board { margin:20px auto;	width:550px; }
+
+
+#search_form {
+	width:100%;
+	margin:20px auto 20px auto; 
+	text-align:center; 	 
+}
+
+h2 {margin-left:12px; margin-top:10px;}
+
+
+input[type="text"]	{
+	padding:5px; 
+	border:1px solid #aaa
+}
+
+input[type="submit"] {
+	padding:5px; 
+	border:1px solid #aaa;
+	background-color: #aaa;
+	font-weight:bold;
+	color:#fff;
+}
+
+#board .totalcont {
+	margin-top:10px;
+
+}
+
+
+a.write {
+	display:block;
+	width:72px;
+	height:25px;
+	background:url("/mysite/assets/images/write.png") no-repeat 0 0;
+	font-size:0;
+	float: right;
+}
+
+input#kwd	{
+	width:250px;
+}
+
+
+.board-form {
+	margin-top:30px
+}
+
+.tbl-ex		{
+	width:100%;
+	margin:3px auto; 
+	border-collapse:collapse;
+	border-bottom:2px solid #333;
+}
+
+.tbl-ex th, 
+.tbl-ex td	{ 
+	padding:8px;
+	text-align:center;	 
+}
+
+
+#modifytitle{
+	font-family : 
+	
+}
+
+#writerinfo	p{ 
+	margin:0px;
+	text-align:right
+}
+
+	
+.tbl-ex th	{ 
+	border-top:2px solid #333;
+	border-bottom:1px dotted #333; 
+	font-size:1.1em; 
+	color:#000; 
+	background-color:#EEEEEE;
+}
+
+.tbl-ex th.cont-title { 
+	text-align:left; 
+	width : 450px;
+
+}	
+
+
+.tbl-ex td {
+	border-top:1px dotted #333;
+	border-bottom:1px dotted #333; 
+}
+
+.board-form .tbl-ex td {
+	text-align:left
+}
+
+.board-form .tbl-ex td.label {
+	text-align:center;
+	font-weight:bold;
+}
+
+.board-form .tbl-ex input[ name='title' ] {
+	width: 480px;
+}
+
+.board-form .tbl-ex textarea#content {
+	width: 470px;
+	height: 200px;
+	padding: 10px;
+	resize: none;
+	outline: none;	
+}
+
+.board-form select {
+	padding:5px;
+}
+
+tr.even td	{ background-color:#e8ecf6 }
+
+.tbl-ex a { text-decoration:none; font-weight:bold; }
+
+div.bottom {
+	width:40%;
+	height:40px;
+	margin:20px auto;
+}
+
+div.bottom a { 
+	text-decoration:none; 
+	dispaly:block;
+}
+
+a#new-book	 { 
+	float:right; 
+	padding:10px 20px 10px 20px ; 
+	border:1px solid #555; 
+	font-weight:bold; 
+	background-color:#E8ECF6; 
+	color:#111 
+}
+
+.board-form .bottom a,
+.board-form .bottom input[type="submit"] {
+	margin-left: 20px;
+	float:center;
+	padding:8px 15px 8px 15px; 
+	border:1px solid #555; 
+	font-weight:bold; 
+	background-color:#E8ECF6; 
+	color:#111;
+	cursor: pointer	
+}
+
+.board-form .bottom a {
+	margin-left: 20px;
+	padding:8px 15px 8px 15px;
+}
+
+a.del	{
+	display:block;
+	width:20px;
+	height:20px; 
+	background:url("/mysite/assets/images/recycle.png") no-repeat 0 0;
+	font-size:0;
+	margin-right:10px;
+	width:20px;
+}
