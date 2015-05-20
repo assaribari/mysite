@@ -1,19 +1,12 @@
-<%@page import="com.sds.icto.mysite.vo.MemberVo"%>
-<%@ page import="java.util.List"%>
-<%@ page import="com.sds.icto.board.dao.BoardDao"%>
-<%@ page import="com.sds.icto.board.vo.BoardVo"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
-	BoardDao dao = new BoardDao();
-	List<BoardVo> list = dao.fetchList();
-	MemberVo authMember = (MemberVo)session.getAttribute("authMember");
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html>	
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>mysite</title>
@@ -47,25 +40,20 @@
 						<th>&nbsp;</th>
 					</tr>
 					
-				<%
-					for (BoardVo vo : list) {
-				%>	
-
+				<c:forEach items="${list }" var="vo" varStatus="status">
 					<tr>
-						<td><%=vo.getNo() %></td>
-						<td><a href="/mysite/board?a=contents&no=<%=vo.getNo()%>"><%=vo.getTitle() %></a></td>
-						<td><%=vo.getName() %></td>
-						<td><%=vo.getSysdate() %></td>
-						<td><%=vo.getViewcount() %></td>
+						<td>${status.count }</td>
+						<td><a href="/mysite/board?a=contents&no=${vo.no }">${vo.title }</a></td>
+						<td>${ vo.name }</td>
+						<td>${ vo.sysdate }</td>
+						<td>${ vo.viewcount }</td>
 						<td>
-							<c:if test="<%=authMember.getNo() == vo.getMemberno() %>">
-							<a href="/mysite/board?a=delete&no=<%=vo.getNo()%>" class="del">삭제</a>
+							<c:if test="${authMember.no == vo.memberno }">
+							<a href="/mysite/board?a=delete&no=${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>
 					</tr>
-				<%
-					}
-				%>
+				</c:forEach>
 					
 				</table>
 			

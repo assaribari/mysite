@@ -52,7 +52,11 @@
 				
 				<div class="bottom">
 					<a href="/mysite/board?a=listform">글목록</a>
-					<a href="/mysite/board?a=modify">글수정</a>
+					
+					<c:if test="${authMember.no==vo.memberno}">
+					<a href="/mysite/board?a=modify&no=${vo.no }&memberno=${authMember.no}">글수정</a>
+					</c:if>
+				
 				</div>
 			</div>
 		</div>

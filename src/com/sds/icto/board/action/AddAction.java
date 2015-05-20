@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sds.icto.board.dao.BoardDao;
 import com.sds.icto.board.vo.BoardVo;
@@ -21,15 +22,21 @@ public class AddAction implements Action {
 	
 		request.setCharacterEncoding( "utf-8" );
 		
+		HttpSession session = request.getSession( false );
+		if( session == null ) {
+
+			response.sendRedirect( "/mysite/board" );
+			return;
+		}
 		
 		String title = request.getParameter( "title" );
 		String content = request.getParameter( "content" );
 		String memberno = request.getParameter( "memberno" );
 		String name = request.getParameter( "name" );
-
+		
 		
 		BoardVo vo = new BoardVo();
-
+		
 		vo.setTitle( title );
 		vo.setContent(content);
 		vo.setMemberno(Long.parseLong(memberno));
@@ -39,7 +46,7 @@ public class AddAction implements Action {
 		BoardDao dao = new BoardDao();
 		dao.insert( vo );
 
-		response.sendRedirect( "/mysite/views/board/listform.jsp" ); 
+		response.sendRedirect( "/mysite/board" ); 
 		
 
 	}
